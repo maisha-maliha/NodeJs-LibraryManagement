@@ -4,12 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>BOOKHOLICS Library</title>
 </head>
 <body>
-    <h1>HERE IS A LIST OF BOOKS</h1>
-    <ul>
-        <li>book 1</li>
-    </ul>
+    <h1>BOOKHOLICS</h1>
+    <p>Welcome to BOOKHOLIC. We are proud to present to you our new generation books for the modern bookworms. Our books ranges from fiction to engineering. You can have any type of book you want. You can add, edit, delete or update books as well. You can buy your favourite book too!!</p>
+    <h2>BOOK LIST </h2>
+    <div class="filter">
+        <span>FILTER:</span>
+        <input type="checkbox">
+        <label for="a">category</label>
+        <input type="checkbox">
+        <label for="a">price</label>
+        <input type="checkbox">
+        <label for="a">quantity</label>
+    </div>
+    <div class="booklist">
+        <table>
+            <tr>
+                <th>NAME</th>
+                <th>CATAGORY</th>
+                <th>PRICE</th>
+                <th>QUANTITY</th>
+            </tr>
+            <tr>
+                <td>book 1</td>
+                <td>science</td>
+                <td>55.5$</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>book 2</td>
+                <td>physics</td>
+                <td>5.5$</td>
+                <td>10</td>
+            </tr>
+        </table>
+    </div>
+    <div class="curdbooklist">
+        <h2>UPDATE BOOK LIST</h2>
+        <form action="">
+            <label for="">Book Name:</label>
+            <input type="text" name="" id="">
+            <label for="">Book Catagory:</label>
+            <input type="text" name="" id="">
+            <label for="">Book Price:</label>
+            <input type="text" name="" id="">
+            <label for="">Book  Quantity:</label>
+            <input type="text" name="" id="">
+        </form>
+    </div>
 </body>
 </html>
