@@ -1,0 +1,1 @@
+console.log("the script file is working")
