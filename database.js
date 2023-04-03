@@ -1,5 +1,4 @@
 const fs = require('fs');
-
 // DATABASE
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
@@ -10,15 +9,15 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 
-var booksname = '<section><tr><th>NAME</th><th>CATAGORY</th><th>PRICE</th><th>QUANTITY</th></tr>';
+var booksname = 'let x = "<section><tr><th>NAME</th><th>CATAGORY</th><th>PRICE</th><th>QUANTITY</th></tr>';
 
 connection.query('SELECT * FROM books;', function (error, results, fields) {
   if (error) throw error;
   results.forEach(element => {
     booksname += '<tr>'+ '<td>'+element.book_name+'</td>'+'<td>'+element.catagory+'</td>'+'<td>'+element.price+'</td>'+'<td>'+element.quantity+'</td>'+ '</tr>';
   });
-  booksname += '</section><script src="../script/script.js"></script>';
-  fs.writeFile('./FrontEnd/templates/booklist.html',booksname, err =>{if(err) console.log(err)});
+  booksname += '</section>"; export {x};';
+  fs.writeFile('./FrontEnd/script/booklist.js',booksname, err =>{if(err) console.log(err)});
   //console.log(booksname);
 });
 // the following code will not show the booksname result
