@@ -9,16 +9,15 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 
-var booksname = 'let x = "<section><tr><th>NAME</th><th>CATAGORY</th><th>PRICE</th><th>QUANTITY</th></tr>';
-
+// ================= SQL QUERY ====================
+let booksname = 'let x = [';
 connection.query('SELECT * FROM books;', function (error, results, fields) {
   if (error) throw error;
   results.forEach(element => {
-    booksname += '<tr>'+ '<td>'+element.book_name+'</td>'+'<td>'+element.catagory+'</td>'+'<td>'+element.price+'</td>'+'<td>'+element.quantity+'</td>'+ '</tr>';
+    booksname += '{ bookname : "'+element.book_name+'",'+'catagory: "'+element.catagory+'", '+'price: "'+element.price+'",'+'quantity: "'+element.quantity+'"},';
   });
-  booksname += '</section>"; export {x};';
+  booksname += ']; export {x};';
   fs.writeFile('./FrontEnd/script/booklist.js',booksname, err =>{if(err) console.log(err)});
-  //console.log(booksname);
 });
 // the following code will not show the booksname result
 // becuase it is outside the connection.query() function
